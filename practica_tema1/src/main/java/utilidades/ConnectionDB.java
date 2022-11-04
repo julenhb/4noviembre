@@ -28,7 +28,7 @@ public class ConnectionDB {
 
 
        try {
-            FileInputStream file = new FileInputStream("bd.properties");
+            FileInputStream file = new FileInputStream("properties.properties");
             prop.load(file);
             host = prop.getProperty("host");
             port = prop.getProperty("port");

@@ -1,6 +1,8 @@
 package com.mycompany.practica_tema1;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -8,6 +10,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import static utilidades.CRUD_Usuarios.comprobarCampos;
 import static utilidades.CRUD_Usuarios.comprobarEmail;
+import static utilidades.CRUD_Usuarios.insertarUsuario;
+import utilidades.ConnectionDB;
+import static utilidades.ConnectionDB.getConexion;
 import utilidades.Usuario;
 
 public class PrimaryController {
@@ -16,6 +21,13 @@ public class PrimaryController {
     private void switchToSecondary() throws IOException {
         App.setRoot("secondary");
     }
+    
+   
+    private Connection con;
+    public PrimaryController() throws SQLException{
+        this.con = getConexion();
+    }
+    
     
     @FXML
     private TextField nombre;
@@ -64,6 +76,8 @@ public class PrimaryController {
         
         if(comprobarCampos(user) && comprobarCampos(user) == true ){
             user.getInfo();
+            insertarUsuario(con, user);
+            
             switchToSecondary();
         }
     }

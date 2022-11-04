@@ -8,19 +8,19 @@ package utilidades;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.regex.Pattern;
+import static utilidades.ConnectionDB.conexion;
 
 /**
  *
  * @author julen
  */
 public class CRUD_Usuarios {
-    public static void insertarUsuario(Connection conexion, Usuario usu)
-    {
-     PreparedStatement ps;
-     try {
-         
-         
+   
+    public static void insertarUsuario(Connection conexion, Usuario usu){
+     
+        PreparedStatement ps;
+     
+        try {
             String sql = "Insert into usuario values(?,?,?,?)";
              ps = (PreparedStatement) conexion.prepareStatement(sql);
              
@@ -67,4 +67,6 @@ public class CRUD_Usuarios {
             return false;
         }
     }
+    
+    
 }
