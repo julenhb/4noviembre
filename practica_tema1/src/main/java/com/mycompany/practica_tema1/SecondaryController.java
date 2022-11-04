@@ -151,6 +151,7 @@ public class SecondaryController implements Initializable {
     
     @FXML
     private void borrarClienteDef(){ //ESTE ELIMINA AL CLIENTE DEFINITIVAMENTE
+        
         eliminarCliente(con, tlfEliminar.getText());
     }
         

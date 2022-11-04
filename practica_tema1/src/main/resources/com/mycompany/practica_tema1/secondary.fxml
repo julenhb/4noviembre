@@ -100,9 +100,9 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <AnchorPane fx:id="mensajeBorrar" layoutX="259.0" layoutY="118.0" prefHeight="325.0" prefWidth="366.0">
+      <AnchorPane fx:id="mensajeBorrar" layoutX="259.0" layoutY="118.0" prefHeight="325.0" prefWidth="366.0" visible="false">
          <children>
-            <Pane layoutX="-2.0" prefHeight="325.0" prefWidth="373.0" style="-fx-background-color: #E74C3C;" visible="false">
+            <Pane layoutX="-2.0" prefHeight="325.0" prefWidth="373.0" style="-fx-background-color: #E74C3C;">
                <effect>
                   <Blend />
                </effect>
@@ -112,8 +112,8 @@
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="tlfEliminar" prefHeight="26.0" prefWidth="189.0" />
-                  <Button fx:id="borrarConfirmado" mnemonicParsing="false" onAction="#borrarClienteDef" prefHeight="42.0" prefWidth="68.0" text="Borrar">
+                  <TextField fx:id="tlfEliminar" layoutX="92.0" layoutY="171.0" prefHeight="26.0" prefWidth="189.0" />
+                  <Button fx:id="borrarConfirmado" layoutX="153.0" layoutY="228.0" mnemonicParsing="false" onAction="#borrarClienteDef" prefHeight="42.0" prefWidth="68.0" text="Borrar">
                      <effect>
                         <InnerShadow>
                            <color>
